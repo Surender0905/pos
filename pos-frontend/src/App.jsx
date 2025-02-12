@@ -1,9 +1,18 @@
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Order from "./pages/Order";
+import Header from "./components/shared/Header";
 
 function App() {
     return (
         <>
-            <h1 className="text-3xl font-bold ">Hello world!</h1>
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/orders" element={<Order />} />
+                </Routes>
+            </BrowserRouter>
         </>
     );
 }
